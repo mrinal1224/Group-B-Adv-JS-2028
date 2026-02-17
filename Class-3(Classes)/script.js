@@ -6,23 +6,24 @@ class Pizaa {
     this.crust = crust;
   }
 
+
   serve() {
     console.log(`This is a ${this.size} Pizza `);
   }
 }
 
 class StuffedCrustPizaa extends Pizaa {
-  constructor(size, toppings, preference, crust, stuffing) {
-    super(size, toppings, preference, crust);
+  constructor( toppings, preference, crust, stuffing) {
+    super(undefined, toppings, preference, crust);
     this.stuffing = stuffing;
+    delete this.size
   }
 }
 
 const order1 = new Pizaa("Medium", ["Tomato , Cheese"], "Veg", "Thin");
 
 const order2 = new StuffedCrustPizaa(
-  "small",
-  ["Cheese", "Mushrooms"],
+  ["mushrooms", "cheese"],
   "Veg",
   "Thick",
   "Mozarella"
@@ -30,7 +31,7 @@ const order2 = new StuffedCrustPizaa(
 
 console.log(order1);
 
-console.log(order2)
+console.log(order2);
 
 order1.serve();
 

@@ -6,33 +6,40 @@ class Pizaa {
     this.crust = crust;
   }
 
-
   serve() {
-    console.log(`This is a ${this.size} Pizza `);
+    console.log(`This is a ${this.size} Pizza from parent `);
   }
 }
 
 class StuffedCrustPizaa extends Pizaa {
-  constructor( toppings, preference, crust, stuffing) {
-    super(undefined, toppings, preference, crust);
+  constructor(size, toppings, preference, crust, stuffing) {
+    super(size, toppings, preference, crust);
     this.stuffing = stuffing;
-    delete this.size
+  }
+
+  test() {
+    console.log("test");
+  }
+
+  describe() {
+    super.serve();
   }
 }
 
 const order1 = new Pizaa("Medium", ["Tomato , Cheese"], "Veg", "Thin");
+console.log(order1);
 
 const order2 = new StuffedCrustPizaa(
+  "small",
   ["mushrooms", "cheese"],
   "Veg",
   "Thick",
   "Mozarella"
 );
 
-console.log(order1);
-
 console.log(order2);
 
 order1.serve();
+order2.describe();
 
 // Classcial Inhertance in JS (prototypal)

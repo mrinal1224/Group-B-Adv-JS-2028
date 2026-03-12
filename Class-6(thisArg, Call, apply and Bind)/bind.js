@@ -9,7 +9,7 @@ const user = {
   name: "steve",
 };
 
-const greetUser = greet.bind(user,"Mumbai", "India" );
+const greetUser = greet.bind(user, 'Mumbai' , );
 
 console.log(greetUser);
 
